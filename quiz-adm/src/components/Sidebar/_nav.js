@@ -8,6 +8,18 @@ export default {
         variant: 'info',
         text: 'NEW'
       }
+    },
+    {
+      name: 'Subject',
+      url: '/subject',
+      icon: 'icon-speedometer',
+      children: [
+        {
+          name: 'List',
+          url: '/subject/list',
+          icon: 'icon-speedometer'
+        }
+      ]
     }
   ]
 };

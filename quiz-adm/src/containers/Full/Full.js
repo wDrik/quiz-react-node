@@ -8,6 +8,7 @@ import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
+import SubjectList from '../../views/Subject/SubjectList/SubjectList';
 
 class Full extends Component {
   render() {
@@ -20,7 +21,8 @@ class Full extends Component {
             <Breadcrumb />
             <Container fluid>
               <Switch>
-                <Route path="/dashboard" name="Dashboard" component={Dashboard}/>
+                <Route path="/dashboard" name="Dashboard" component={ Dashboard } />
+                <Route path="/subject/list" name="SubjectList" component={ SubjectList }/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>
