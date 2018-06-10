@@ -9,13 +9,20 @@ import {
   Table } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { thunkFetchSubjectList } from './../../../actions/Subject/SubjectThunk';
 
 class SubjectList extends Component {
   constructor(props) {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchSubjectList()
+  }
+
   render() {
+    let { subjectList } = this.props;
+
     return(
       <div className="animated fadeIn">
         <Row>
@@ -34,18 +41,20 @@ class SubjectList extends Component {
                   <thead>
                     <tr>
                       <th>Name</th>  
-                      <th>Date</th>  
+                      <th>Description</th>  
                       <th>Actions</th>  
                     </tr>                    
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Puzzle</td>
-                      <td>28/05/2018</td>
-                      <td>
-                        <Button color="warning">Delete</Button>
-                      </td>
-                    </tr>
+                    { subjectList.subjects.map((subject, index) => (
+                      <tr key={ subject._id }>
+                        <td>{ subject.name }</td>
+                        <td>{ subject.description }</td>
+                        <td>
+                          <Button color="warning">Delete</Button>
+                        </td>
+                      </tr>
+                    )) }
                   </tbody>
                 </Table>
               </CardBody>
@@ -59,13 +68,13 @@ class SubjectList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    subjectList: state.subjectStore.subjectList
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    fetchSubjectList: () => dispatch(thunkFetchSubjectList())
   }
 }
 

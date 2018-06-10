@@ -13,3 +13,9 @@ export const createSubject = async (subject) => {
     }
   )
 }
+
+export const fetchSubjects = async () => {
+  const url = `${URL}/subjects`;
+
+  return await axios.get(url)
+}
