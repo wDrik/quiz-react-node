@@ -18,6 +18,11 @@ export default {
           name: 'List',
           url: '/subject/list',
           icon: 'icon-speedometer'
+        },
+        {
+          name: 'New',
+          url: '/subject/new',
+          icon: 'icon-speedometer'
         }
       ]
     }
