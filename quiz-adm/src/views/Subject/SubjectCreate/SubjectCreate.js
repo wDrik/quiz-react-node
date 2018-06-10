@@ -10,7 +10,8 @@ import {
   FormGroup, 
   Label, 
   Button, 
-  Input } from 'reactstrap';
+  Input 
+} from 'reactstrap';
 import { connect } from 'react-redux';
 import { thunkCreateSubject } from './../../../actions/Subject/SubjectThunk';
 
