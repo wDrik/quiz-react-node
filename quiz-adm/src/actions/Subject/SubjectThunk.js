@@ -17,7 +17,7 @@ export function thunkCreateSubject(subject) {
       dispatch(SubjectActions.createError(true));
     }
   }
-} 
+}
 
 export function thunkFetchSubjectList() {
   return async (dispatch) => {
