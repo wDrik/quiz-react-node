@@ -8,6 +8,6 @@ export default async (req, res) => {
 
     return res.status(201).json({ subject });
   } catch(err) {
-    return res.status(500).json({ subject });
+    return res.status(500).json({ err });
   }
 }

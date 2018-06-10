@@ -10,6 +10,10 @@ const User = new mongoose.Schema({
     type: mongoose.SchemaTypes.Email,
     required: true
   },
+  active: {
+    type: Boolean,
+    default: true
+  },
   password: {
     type: String,
     required: true
