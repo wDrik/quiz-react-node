@@ -3,6 +3,8 @@ import User from './../models/User';
 export default async (req, res) => {
   let user = new User(req.body);
 
+  user.password = user.hashPassword(user.password);
+
   try {
     await user.save();
 
