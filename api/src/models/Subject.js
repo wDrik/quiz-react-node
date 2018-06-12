@@ -7,7 +7,10 @@ const Subject = new mongoose.Schema({
   },
   description: {
     type: String
-  } 
+  },
+  questions: [{
+    type: mongoose.SchemaTypes.ObjectId, ref: 'Answer'
+  }]
 })
 
 export default mongoose.model('Subject', Subject);
