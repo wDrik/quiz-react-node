@@ -22,12 +22,12 @@ const User = new mongoose.Schema({
   }
 });
 
-User.methods.hashPassword = function(password) {
+User.methods.hashPassword = function (password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
 }
 
-User.methods.validate = function(password, cb) {
+User.methods.validatePassword = function (password, cb) {
   return bcrypt.compare(password, this.password, cb)
 }
 
-export default mongoose.model('User', User);
+export default mongoose.model('User', User)

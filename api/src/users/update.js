@@ -1,9 +1,14 @@
 import User from './../models/User';
 
 export default async (req, res) => {
-
   try {
-    let user = await User.findByIdAndUpdate(req.params.id, req.body);
+    let user = await User.findById(req.params.id)
+
+    if ('password' in req.body) {
+      req.body.password = user.hashPassword(req.body.password);
+    }
+
+    await User.findByIdAndUpdate(req.params.id, req.body);
 
     return res.status(200).end();
   } catch (err) {

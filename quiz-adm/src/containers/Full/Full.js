@@ -8,8 +8,11 @@ import Aside from '../../components/Aside/';
 import Footer from '../../components/Footer/';
 
 import Dashboard from '../../views/Dashboard/';
-import SubjectList from '../../views/Subject/SubjectList/SubjectList';
-import SubjectCreate from '../../views/Subject/SubjectCreate/SubjectCreate';
+import SubjectList from '../../views/Subject/SubjectList/';
+import SubjectCreate from '../../views/Subject/SubjectCreate/';
+import UserList from '../../views/User/UserList/';
+import UserCreate from '../../views/User/UserCreate/';
+import UserEdit from '../../views/User/UserEdit/';
 
 class Full extends Component {
   render() {
@@ -23,8 +26,11 @@ class Full extends Component {
             <Container fluid>
               <Switch>
                 <Route path="/dashboard" name="Dashboard" component={ Dashboard } />
-                <Route path="/subject/list" name="SubjectList" component={SubjectList} />
-                <Route path="/subject/new" name="SubjectCreate" component={ SubjectCreate }/>
+                <Route path="/subject/new" name="SubjectCreate" component={ SubjectCreate } />
+                <Route path="/subject/list" name="SubjectList" component={ SubjectList } />
+                <Route path="/user/new" name="UserCreate" component={ UserCreate }/>
+                <Route path="/user/list" name="UserList" component={UserList} />
+                <Route path="/user/edit/:id" name="UserEdit" component={ UserEdit } />
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

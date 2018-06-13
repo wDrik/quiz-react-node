@@ -12,7 +12,7 @@ export function thunkCreateSubject(subject) {
       let res = await createSubject(subject);
       dispatch(SubjectActions.createSuccess(res.data));
       dispatch(thunkFetchSubjectList());
-    } catch(err) {
+    } catch (err) {
       dispatch(SubjectActions.createSubject(false));
       dispatch(SubjectActions.createError(true));
     }

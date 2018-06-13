@@ -11,10 +11,7 @@ export default async (req, res) => {
       return res.status(404).json({ token: '' })
     }
 
-    user.validate(req.body.password, (err, result) => {
-      console.log(err)
-      console.log(result)
-
+    user.validatePassword(req.body.password, (err, result) => {
       if (!result || err) {
         return res.status(404).json({ token: '' })
       }
